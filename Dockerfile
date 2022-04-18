@@ -1,19 +1,20 @@
 FROM node:17-slim
 # Using slim for now. use regular if issue arrises
 
-USER node
-
 WORKDIR /app
 
 # default port doesnt matter just yet
-EXPOSE 8888
+EXPOSE 3000
 
-COPY package*.json /app
+COPY package.json /app
+COPY package-lock.json /app
 
 # Install packages from package-lock.json
 RUN npm ci
 
 # Copy project files over
-COPY * /app
+COPY . /app
 
-CMD ["npm","start"]
+RUN npm run build
+
+CMD ["npm","run","start"]
