@@ -2,3 +2,7 @@
 .gitattributes
 .gitignore
 README.md
+Dockerfile
+docker-compose.yml
+./devcontainer
+./vscode
