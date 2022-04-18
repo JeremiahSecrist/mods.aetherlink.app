@@ -1,4 +1,4 @@
-FROM node:17-slim
+FROM node:17
 # Using slim for now. use regular if issue arrises
 
 WORKDIR /app
@@ -6,8 +6,7 @@ WORKDIR /app
 # default port doesnt matter just yet
 EXPOSE 3000
 
-COPY package.json /app
-COPY package-lock.json /app
+COPY package.json package-lock.json /app/
 
 # Install packages from package-lock.json
 RUN npm ci
