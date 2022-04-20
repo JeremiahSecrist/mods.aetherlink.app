@@ -1,8 +1,9 @@
 .eslintrc.json
 .gitattributes
 .gitignore
+.git
 README.md
-Dockerfile
-docker-compose.yml
-./devcontainer
-./vscode
+*Docker*
+*docker*
+.devcontainer
+vscode
