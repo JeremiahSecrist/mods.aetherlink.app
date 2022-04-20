@@ -9,11 +9,10 @@ EXPOSE 3000
 COPY package.json package-lock.json /app/
 
 # Install packages from package-lock.json
-RUN npm ci
+RUN make install
 
 # Copy project files over
 COPY . /app
 
-RUN npm run build
+RUN make build
 
-CMD ["npm","run","start"]

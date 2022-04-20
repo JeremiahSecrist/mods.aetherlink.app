@@ -9,11 +9,11 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 
 # Install packages from package-lock.json
-RUN npm ci
+RUN make install
 
 # Copy project files over
 COPY . .
 
-RUN npm run build
+RUN make build
 
 CMD ["npm","run","start"]
